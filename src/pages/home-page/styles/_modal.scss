@@ -1,8 +1,16 @@
 .modal{
+    display: block;
+    opacity: 0;
     background-color: #fff;
-    padding: 16px;
+    padding: 16px 16px 24px;
     margin: 16px;
     border-radius: 18px;
+    width: 343px;   
+
+    &.is-open{
+        opacity: 1; 
+        transition: all linear 0.5s;      
+    }
 
     & &__content{
         display: flex;
@@ -10,6 +18,7 @@
         gap: 24px;
     }
 
+    
     & &__scale{
         font-size: 12px;
         line-height: 120%;
@@ -21,6 +30,11 @@
 
         & > span{
             width: min-content;
+            margin-top: 12px;
+        }
+
+        & > span:nth-child(2){
+            text-align: right;
         }
     }
 
@@ -32,7 +46,7 @@
     }
 
     & &__rate{
-        display: none;
+        display: none;  
         
 
         &:hover + label{
@@ -42,12 +56,10 @@
         &:checked + label{
             background-color: #293CE2;
             color: #fff;
-        }
-
-        
+        }        
 
         & + label{
-            transition: all ease-in-out 0.3s;
+            transition: all ease-in-out 0.5s;
             padding: 15px 0;
             border: 1px solid #DADFE9;
             border-radius: 12px;
@@ -55,6 +67,18 @@
             font-size: 18px;
             line-height: 1em;
             font-weight: 500;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 375px){
+    .modal{
+        width: 372px;
+        padding: 24px;
+
+        & &__rates{
+            column-gap: 6px;
         }
     }
 }

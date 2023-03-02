@@ -2,10 +2,22 @@
 /// Here we import all the JavaScript files we need for our homepage.
 
 import '../styles/home-page.scss';
-import Modal from 'modal-vanilla';
+import MicroModal from 'micromodal';
+import enableButton from './enableButton';
+import submitRate from './submitRate';
+
+const buttonHandler = document.querySelector("#submitButton");
+
+MicroModal.init();
+setTimeout(()=>{
+  MicroModal.show('modal-1');
+}, 3000);
+
+buttonHandler.disabled = true;
 
 
-const myModal = new Modal({
-    el: document.getElementById('my-modal')
-  });
-  myModal.show();
+document.querySelector("#radioForm").addEventListener('change', ()=>{
+    enableButton(buttonHandler);
+})
+
+submitRate(buttonHandler);

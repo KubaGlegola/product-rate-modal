@@ -10,9 +10,45 @@
 
 <!-- In order to start your challenge, remove all the content inside <div id="home-page"></div> and start coding :) -->
 
-<body>
-  <div id="home-page">
-    <div id="static-modal" class="modal fade" tabindex="-1" role="dialog">
+<body>  
+    <div id="home-page">
+      <div class="modal" id="modal-1" aria-hidden="true">        
+        <div tabindex="-1" data-micromodal-close>      
+          <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title" > 
+            <div class="modal__content">
+              <div class='modal__header header'>
+                <div class="header__actions-container">
+                  <div class='header__star-container'><img src="/images/star.png" alt="star icon" class="header__star-icon" /></div>
+                  <img src="/images/close.png" alt="cross icon" class="header__close-icon"/>
+                </div>                
+                <h2 class="header__title">How do you feel about using our product?</h2>
+              </div>      
+              <div class="modal__body" id="modal-1-content">
+                <form id="radioForm" method="#" class="modal__rates">  
+                  <input type="radio" name="rate" value="1" id="rate-1" class="modal__rate"/>
+                  <label for="rate-1">1</label>
+                  <input type="radio" name="rate" value="2" id="rate-2" class="modal__rate"/>
+                  <label for="rate-2">2</label>
+                  <input type="radio" name="rate" value="3" id="rate-3" class="modal__rate"/>
+                  <label for="rate-3">3</label>
+                  <input type="radio" name="rate" value="4" id="rate-4" class="modal__rate"/>
+                  <label for="rate-4">4</label>
+                  <input type="radio" name="rate" value="5" id="rate-5" class="modal__rate"/>
+                  <label for="rate-5">5</label>
+                </form>
+                <div class="modal__scale">
+                  <span>Extremly dissatisfied</span>
+                  <span>Extremly satisfied</span>
+                </div>
+              </div>
+              <div class="modal__footer">
+                <button type="button" id="submitButton" class="button" disabled>Next step</button>            
+              </div>
+            </div>    
+          </div>
+        </div>
+      </div>
+    <!-- <div id="static-modal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal__dialog">
         <div class="modal__content">
           <div class="modal__header">
@@ -41,9 +77,9 @@
           <div class="modal__footer">
             <button type="button" class="button button--disabled" data-dismiss="modal">Next step</button>            
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+      </div> 
+    </div> -->
   </div>
 
   <script type="module" src="/src/global-scripts/main.js"></script>
